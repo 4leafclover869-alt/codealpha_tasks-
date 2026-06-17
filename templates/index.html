@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Network Sniffer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🛡️ Basic Network Sniffer</h1>
+
+    <div class="button-group">
+
+        <button onclick="startCapture()">
+            Start Capture
+        </button>
+
+        <button onclick="stopCapture()">
+            Stop Capture
+        </button>
+
+        <button onclick="clearPackets()">
+            Clear Data
+        </button>
+
+    </div>
+
+    <div class="card">
+        <h3>Total Packets</h3>
+        <h2 id="count">0</h2>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Source IP</th>
+                <th>Destination IP</th>
+                <th>Protocol</th>
+                <th>Length</th>
+            </tr>
+        </thead>
+
+        <tbody id="packetTable">
+        </tbody>
+    </table>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
